@@ -1,19 +1,126 @@
-body {
-    background-color:  rgb(1, 67, 78);
+html {
+    scroll-behavior: smooth;
 }
 
-.tophead {
+body {
+    margin: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Cabin;
+}
+
+.on-open {
+    height: 100vh;
+    width: 100vw;
     display: flex;
+    justify-content: center;
+    background-color: #2C3A47;
+    color: #e8f0e6;
+    font-size: 45px;
+    position: absolute;
+    
+}
+
+.open-display {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-img {
-    float: right;
-    border-radius: 50%;
+
+.continue {
+    background-color: #2C3A47;
+    color: #e8f0e6;
+    border: 0.3vw solid #e8f0e6;
+    border-radius: 0.3vw;
+    margin-top: 20px;
+    font-size: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Cabin;
+    transition: background-color 0.15s;
 }
 
-.text {
-    font-size: 20px;
-    padding-right: 50%;
+.continue:hover {
+    cursor: pointer;
+    background-color: #242b31;
+}
+
+#section2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    background-color: #182C61;
+    color: #e8f0e6;
+    padding: 25px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    background-color: #CAD3C8;
+    padding: 25px;
+    height: 100%;
+    color: #2C3A47;
+    font-size: 28px;
+}
+
+.intro {
+    background-color: #e8f0e6;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.social-button {
+    border: none;
+    color: white;
+    background-color: #2C3A47;
+}
+
+.special {
+    font-family: Dosis;
+    font-size: 40px;
+    color: black;
+}
+
+.special-text {
+    font-size: 28px;
+    white-space: nowrap;
+    width: 0px;
+}
+
+.typed-cursor {
+    margin-bottom: 100px;
+}
+
+.pfp {
+    width: 200px;
+    border-radius: 175px;
+}
+
+.intro-img {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quote {
+    padding: 10px;
+    color: #e8f0e6;
+    background-color: #2C3A47;
+    border-radius: 5px;
 }
