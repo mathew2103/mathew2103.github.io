@@ -11,15 +11,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <section class="on-open"  id="section1">
-            <div class="open-display" >
+        <section id="section1">
+            <div class="on-open" >
+                <div class="open-display" >
                 
                     <p >Hey there!</p>
                     <p>Welcome to <strong>Mathew</strong>'s Page</p>      
                     <button class="continue" id="continueB" onclick="openMain()">Continue</button>
                 
                 
+                </div>
             </div>
+            
         </section>
 
         <section class="main" id="section2">
@@ -38,7 +41,7 @@
                             <p class="intro1">I'm <strong>Mathew!</strong></p>
                             <p class="special-text"><span class="non-special">Talk to me about </span><strong><span class="special autotype"></span></strong></p>
                         </div>
-                        <p class="quote-text quote" id="quote-text"><em>"If nothing changes, nothing is going to change."</em></p>
+                        <p class="quote" id="quote-text"><em>"If nothing changes, nothing is going to change."</em></p>
                     </div>
                     <div class="intro-img">
                         <img src="assets/pic.JPG" alt="" class="pfp">
@@ -57,13 +60,22 @@
         <script>
             const sec1 = document.getElementById("section1")
             function openMain() {
+                
                 for(let i = 99; i > 0; i-=1){
                     setTimeout(() => {
                         sec1.style.opacity = i/100
                     }, (100-i))
                 }
+                setTimeout(() => {
+                    sec1.hidden = true
+
+                }, (100));
+
+                let texts = ["Python", "Web Development", "Node.js", "Discord Bots", "Formula 1", "Music"];
+                if(screen.width < 768) texts = texts.filter(a => a.length < 12);
+                // sec1.style["pointer-events"] = none;
                 var typed = new Typed(".autotype", {
-                strings: ["Python", "Web Development", "Node.js", "Discord Bots", "Formula 1", "Music"],
+                strings: texts,
                 typeSpeed: 145,
                 backSpeed: 120,
                 loop: true

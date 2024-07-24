@@ -4,6 +4,9 @@ html {
 
 body {
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+    
 }
 
 p {
@@ -15,7 +18,7 @@ p {
 .on-open {
     height: 100vh;
     width: 100vw;
-    display: flex;
+    
     justify-content: center;
     background-color: #2C3A47;
     color: #e8f0e6;
@@ -83,13 +86,13 @@ p {
 .social-button {
     border: none;
     color: white;
-    background-color: #2C3A47;
+    background-color: #182C61;
 }
 
 .special {
     font-family: Dosis;
     font-size: 40px;
-    color: black;
+    color:#242b31;
 }
 
 .special-text {
@@ -124,3 +127,31 @@ p {
     background-color: #2C3A47;
     border-radius: 5px;
 }
+
+
+@media (max-width: 768px) {
+    /* For mobile phones: */
+    /* [class*="col-"] {
+      width: 100%;
+    } */
+    body {
+        width: 100vw;
+    }
+    p {
+        font-size: 20px;
+    }
+    .pfp {
+        width: 65px;
+    }
+    .special-text, .special {
+        font-size: 20px;
+    }
+    .intro, .quote {
+        padding: 7px;
+    }
+    .quote {
+        margin-top: 15px;
+        font-size: 15px;
+        width: 177px;
+    }
+  }
