@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Dosis:wght@200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="eventloader.js"></script>
     </head>
     <body>
         <section id="section1">
@@ -46,9 +47,11 @@
                     <div class="intro-img">
                         <img src="assets/pic.JPG" alt="" class="pfp">
                     </div>
-                    
                 </div>
+
+                <div class="timeline" id="timeline"><p class="timeline-head">Timeline</p></div>
             </div>
+            
             
 
         </section>
@@ -81,10 +84,66 @@
                 loop: true
             });
                 // sec1.style.display = "none";
-                window.scrollTo(0,document.body.scrollHeight);
+                // window.scrollTo(0,document.body.scrollHeight);
                 
             }
             
+        </script>
+
+        <script>
+            let timeline = document.getElementById("timeline");
+
+            let events = [
+                ['May\n2024', "12th Grade", "Cleared 12th Grade from Central Board of Secondary Education with 91.8%"],
+                ['April\n2024', "JEE Mains", "Scored 97%ile in Joint Entrance Examination (JEE) Main 2024"],
+                ['May\n2022', "10th Grade", "Cleared 10th Grade from Central Board of Secondary Education with 94%"]
+            ]
+            let counter = 1;
+            events.forEach(e => {
+                
+                let timeP = document.createElement("p");
+                timeP.className = "event-time-text";
+                timeP.innerText = e[0];
+                let eventTimeDiv = document.createElement("div");
+                eventTimeDiv.className = "event-time";
+                eventTimeDiv.appendChild(timeP);
+
+                let headerP = document.createElement("p");
+                headerP.className = "event-header";
+                headerP.innerText = e[1];
+
+                let descP = document.createElement("p");
+                descP.className = "event-desc";
+                descP.innerText = e[2];
+
+                let eventInfoDiv = document.createElement("div");
+                eventInfoDiv.className = "event-info";
+                eventInfoDiv.appendChild(headerP);
+                eventInfoDiv.appendChild(descP);
+
+                let eventDetailDiv = document.createElement("div");
+                eventDetailDiv.className = "event-details";
+                eventDetailDiv.appendChild(eventTimeDiv);
+                eventDetailDiv.appendChild(eventInfoDiv);
+
+                
+                let eventDiv = document.createElement("div");
+                eventDiv.className = "event";
+                eventDiv.appendChild(eventDetailDiv);
+                if(screen.width > 768 && counter < events.length) {
+                    
+                    let eventConDiv = document.createElement("div");                    
+                    eventConDiv.className = "event-connect";
+                    eventDiv.appendChild(eventConDiv);
+                    ++counter;
+                } else if (screen.width > 768 && counter == events.length) {
+                    eventDiv.className = "event event-margin"
+                }
+                
+                
+
+                timeline.appendChild(eventDiv);
+            })
         </script>
     </body>
 </html>

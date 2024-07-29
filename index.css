@@ -1,12 +1,17 @@
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 html {
-    scroll-behavior: smooth;
+    overflow: hidden
 }
 
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
-    
+    background-color: #CAD3C8;
 }
 
 p {
@@ -24,7 +29,7 @@ p {
     color: #e8f0e6;
     font-size: 45px;
     position: absolute;
-    
+    z-index: 2;
 }
 
 .open-display {
@@ -69,7 +74,7 @@ p {
 }
 
 .container {
-    background-color: #CAD3C8;
+
     padding: 25px;
     height: 100%;
     color: #2C3A47;
@@ -128,6 +133,73 @@ p {
     border-radius: 5px;
 }
 
+.timeline {
+    margin-top: 20px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    
+}
+.event-details {
+    display: flex;
+}
+.event-connect {
+    width: 15px;
+    height: 50px;
+    background-color: #e8f0e6;
+    margin-left: 55px;
+    box-shadow: 1px 1px 2.3px #242b31;
+}
+
+.event-time {
+    background-color: #e8f0e6;
+    width: 125px;
+    height: 125px;
+    border-radius: 62.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 1px 0px 2.3px #242b31;
+    z-index: 1;
+}
+
+.event-info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.event-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: #242b31;
+    margin-bottom: 10px;
+}
+
+.event-desc {
+    font-size: 25px;
+    text-decoration: overline;
+}
+
+.timeline-head {
+    font-size: 35px;
+    text-decoration: underline;
+    margin-bottom: 12px;
+    margin-left: 5px;
+}
+
+.event-margin {
+    margin-bottom: 12px;
+}
+
 
 @media (max-width: 768px) {
     /* For mobile phones: */
@@ -154,4 +226,30 @@ p {
         font-size: 15px;
         width: 177px;
     }
+    .event-info {
+        margin-left: 5px;
+        max-width: 240px;
+    }
+    .event-time {
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px;
+        display: block;
+    }
+    .event-time-text {
+        font-size: 16px;
+    }
+    .event-header {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+    .event-desc {
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .event {
+        margin-bottom: 8px;
+    }
   }
+
+
