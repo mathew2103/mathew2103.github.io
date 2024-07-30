@@ -3,16 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mathew's Portfolio</title>
+        <title>Mathew's Home Page</title>
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Dosis:wght@200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="eventloader.js"></script>
     </head>
     <body>
-        <section id="section1">
+        <!-- <section id="section1">
             <div class="on-open" >
                 <div class="open-display" >
                 
@@ -24,14 +23,19 @@
                 </div>
             </div>
             
-        </section>
+        </section> -->
 
         <section class="main" id="section2">
             <div class="hero">
-                <p style="display: flex;align-items: center;">Welcome!</p>
-                <div class="socials">
-                    <button class="social-button"><a href="https://www.instagram.com/mathew_.21/"><i class="fa fa-instagram" style="font-size:30px;color: white;"></i></a></button>
-                    <button class="social-button"><a href="https://github.com/mathew2103"><i class="fa fa-github" style="font-size:30px;color: white;"></i></a></button>
+                <div class="anchors">
+                    <!-- <p style="display: flex;align-items: center;">Welcome!</p> -->
+                     <a href="/index.html">Home</a>
+                     <a href="/achievements.html">Achievements</a>
+                </div>
+                
+                <div class="socials">   
+                    <button class="social-button"><a href="https://www.instagram.com/mathew_.21/"><i class="fa fa-instagram social" style="color: white;"></i></a></button>
+                    <button class="social-button"><a href="https://github.com/mathew2103"><i class="fa fa-github social" style="color: white;"></i></a></button>
                 </div>
                 
             </div>
@@ -49,7 +53,9 @@
                     </div>
                 </div>
 
-                <div class="timeline" id="timeline"><p class="timeline-head">Timeline</p></div>
+                <div class="timeline" id="timeline"><p class="timeline-head">Timeline</p>
+
+                </div>
             </div>
             
             
@@ -61,20 +67,7 @@
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
         <script>
-            const sec1 = document.getElementById("section1")
-            function openMain() {
-                
-                for(let i = 99; i > 0; i-=1){
-                    setTimeout(() => {
-                        sec1.style.opacity = i/100
-                    }, (100-i))
-                }
-                setTimeout(() => {
-                    sec1.hidden = true
-
-                }, (100));
-
-                let texts = ["Python", "Web Development", "Node.js", "Discord Bots", "Formula 1", "Music"];
+            let texts = ["Python", "Web Development", "Node.js", "Discord Bots", "Formula 1", "Music"];
                 if(screen.width < 768) texts = texts.filter(a => a.length < 12);
                 // sec1.style["pointer-events"] = none;
                 var typed = new Typed(".autotype", {
@@ -82,11 +75,33 @@
                 typeSpeed: 145,
                 backSpeed: 120,
                 loop: true
-            });
-                // sec1.style.display = "none";
-                // window.scrollTo(0,document.body.scrollHeight);
+                });
+            // const sec1 = document.getElementById("section1")
+            // function openMain() {
                 
-            }
+            //     for(let i = 99; i > 0; i-=1){
+            //         setTimeout(() => {
+            //             sec1.style.opacity = i/100
+            //         }, (100-i))
+            //     }
+            //     setTimeout(() => {
+            //         sec1.hidden = true
+
+            //     }, (100));
+
+            //     let texts = ["Python", "Web Development", "Node.js", "Discord Bots", "Formula 1", "Music"];
+            //     if(screen.width < 768) texts = texts.filter(a => a.length < 12);
+            //     // sec1.style["pointer-events"] = none;
+            //     var typed = new Typed(".autotype", {
+            //     strings: texts,
+            //     typeSpeed: 145,
+            //     backSpeed: 120,
+            //     loop: true
+            //     });
+            //     // sec1.style.display = "none";
+            //     // window.scrollTo(0,document.body.scrollHeight);
+                
+            // }
             
         </script>
 
@@ -94,19 +109,19 @@
             let timeline = document.getElementById("timeline");
 
             let events = [
-                ['May\n2024', "12th Grade", "Cleared 12th Grade from Central Board of Secondary Education with 91.8%"],
-                ['April\n2024', "JEE Mains", "Scored 97%ile in Joint Entrance Examination (JEE) Main 2024"],
-                ['May\n2022', "10th Grade", "Cleared 10th Grade from Central Board of Secondary Education with 94%"]
+                ['May 2024', "12th Grade", "Cleared 12th Grade from Central Board of Secondary Education with 91.8%"],
+                ['April 2024', "JEE Mains", "Scored 97%ile in Joint Entrance Examination (JEE) Main 2024"],
+                ['May 2022', "10th Grade", "Cleared 10th Grade from Central Board of Secondary Education with 94%"]
             ]
             let counter = 1;
             events.forEach(e => {
                 
-                let timeP = document.createElement("p");
-                timeP.className = "event-time-text";
-                timeP.innerText = e[0];
-                let eventTimeDiv = document.createElement("div");
-                eventTimeDiv.className = "event-time";
-                eventTimeDiv.appendChild(timeP);
+                // let timeP = document.createElement("p");
+                // timeP.className = "event-time-text";
+                // timeP.innerText = e[0];
+                // let eventTimeDiv = document.createElement("div");
+                // eventTimeDiv.className = "event-time";
+                // eventTimeDiv.appendChild(timeP);
 
                 let headerP = document.createElement("p");
                 headerP.className = "event-header";
@@ -114,31 +129,24 @@
 
                 let descP = document.createElement("p");
                 descP.className = "event-desc";
-                descP.innerText = e[2];
+                descP.innerHTML = `${e[2]} | <span class="event-date">🗓️ ${e[0]}</span>`;
 
-                let eventInfoDiv = document.createElement("div");
-                eventInfoDiv.className = "event-info";
-                eventInfoDiv.appendChild(headerP);
-                eventInfoDiv.appendChild(descP);
+                // let eventInfoDiv = document.createElement("div");
+                // eventInfoDiv.className = "event-info";
+                // eventInfoDiv.appendChild(headerP);
+                // eventInfoDiv.appendChild(descP);
 
-                let eventDetailDiv = document.createElement("div");
-                eventDetailDiv.className = "event-details";
-                eventDetailDiv.appendChild(eventTimeDiv);
-                eventDetailDiv.appendChild(eventInfoDiv);
+                // let eventDetailDiv = document.createElement("div");
+                // eventDetailDiv.className = "event-details";
+                // eventDetailDiv.appendChild(eventTimeDiv);
+                // eventDetailDiv.appendChild(eventInfoDiv);
 
                 
                 let eventDiv = document.createElement("div");
                 eventDiv.className = "event";
-                eventDiv.appendChild(eventDetailDiv);
-                if(screen.width > 768 && counter < events.length) {
-                    
-                    let eventConDiv = document.createElement("div");                    
-                    eventConDiv.className = "event-connect";
-                    eventDiv.appendChild(eventConDiv);
-                    ++counter;
-                } else if (screen.width > 768 && counter == events.length) {
-                    eventDiv.className = "event event-margin"
-                }
+                eventDiv.appendChild(headerP);
+                eventDiv.appendChild(descP);
+                
                 
                 
 

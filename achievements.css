@@ -1,0 +1,56 @@
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.achievement-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    background-color: #e8f0e6;
+    box-shadow: 0px 0px 5px #2c3a478e;
+    padding: 8px;
+    margin: 7px;
+    transition: box-shadow 0.15s;
+    max-width: 20vw;
+}
+
+.achievement:hover {
+    box-shadow: 0 0 5px #2c3a47;
+}
+
+.achieve-head {
+    font-family: Dosis;
+    font-weight: bold;
+    text-wrap: wrap;
+    font-size: 35px;
+    text-align: center;
+}
+
+.achieve-desc {
+    font-size: 28px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+    .achievement {
+        max-height: 40vh;
+        max-width: fit-content;
+    }
+    .achieve-head {
+        font-size: 18px ;
+    }
+    .achieve-desc {
+        font-size: 16px;
+    }
+
+}
